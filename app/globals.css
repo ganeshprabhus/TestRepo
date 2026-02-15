@@ -1,0 +1,139 @@
+@import "tailwindcss";
+
+
+
+::selection {
+  background-color: var(--color-gold); /* Tailwind blue-600 */
+  color:var(--color-deep-purple); /* Text color when selected */
+}
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+/* ---------------------------------- */
+/* CUSTOM CINEMATIC STYLES (from original HTML) */
+/* ---------------------------------- */
+
+/* Define the color scheme and fonts */
+:root {
+    --color-black: #0A0A0A; 
+    --color-white: #FFFFFF;
+    --color-gold: #e5d895; 
+    --color-deep-purple: #3A005A; 
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--color-white);
+    background-color: var(--color-black);
+    /* scroll-behavior: smooth;  <-- Removed for Lenis */
+}
+
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    color: var(--color-white);
+}
+
+.gold-text {
+    color: var(--color-gold);
+}
+
+.purple-bg {
+    background-color: var(--color-deep-purple);
+}
+
+.gold-border {
+    border-color: var(--color-gold);
+}
+
+.nav-link:hover {
+    color: var(--color-gold);
+    text-shadow: 0 0 5px var(--color-gold);
+}
+
+.cta-button {
+    border: 2px solid var(--color-gold);
+    color: var(--color-gold);
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: var(--color-gold);
+    color: var(--color-black);
+    box-shadow: 0 0 20px var(--color-gold); 
+}
+
+.cinematic-placeholder {
+    min-height: 400px;
+    background: linear-gradient(135deg, var(--color-black) 0%, #1a0033 50%, var(--color-black) 100%);
+    border: 1px solid rgba(255, 215, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: var(--font-heading);
+    position: relative;
+    overflow: hidden;
+}
+
+/* ---------------------------------- */
+/* SCROLL REVEAL */
+/* ---------------------------------- */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1s ease-out, transform 0.8s ease-out;
+    transition-delay: 0.1s;
+}
+
+.scroll-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* Custom Scrollbar - Minimal Dark Style */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #000;
+
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-gold);
+
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #d4c785;
+}
+::-webkit-scrollbar-button {
+  display: none;
+    height: 0;
+  width: 0;
+}
+
+
+
+/* ---------------------------------- */
+/* LENIS SMOOTH SCROLL */
+/* ---------------------------------- */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
